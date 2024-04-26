@@ -5,7 +5,7 @@ namespace EmployeeManager.Business.Dto
 {
     public abstract class DtoBase
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public static implicit operator EntityBase(DtoBase dto) => dto.ToEntity();
 

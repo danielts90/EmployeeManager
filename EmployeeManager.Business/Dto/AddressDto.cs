@@ -21,12 +21,12 @@ namespace EmployeeManager.Business.Dto
         {
             return new Address()
             {
-                Id = Id,
-                Street = Street,
-                Number = Number,
-                City = City,
-                Uf = Uf,
-                Cep = Cep
+                id = Id,
+                street = Street,
+                number = Number,
+                city = City,
+                uf = Uf,
+                cep = Cep
             };
         }
     }

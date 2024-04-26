@@ -18,7 +18,7 @@ namespace EmployeeManager.Business.Services
         {
             var existentEntity = await _repository.GetById(id);
 
-            if (existentEntity != null)
+            if (existentEntity is TEntity)
                 await _repository.Delete(existentEntity);
             else
                 throw new ArgumentException("Entidade não encontrada.");
@@ -33,7 +33,9 @@ namespace EmployeeManager.Business.Services
         public async Task<TDto> GetById(long id)
         {
             var result = await _repository.GetById(id);
-            return (TDto)result;
+            if(result is TEntity)
+                return (TDto)result;
+            return null;
         }
 
         public async Task<long> Insert(TDto dto)
@@ -58,7 +60,7 @@ namespace EmployeeManager.Business.Services
             }
 
             var existentEntity = await _repository.GetById(dto.Id);
-            if (existentEntity != null)
+            if (existentEntity is TEntity)
                 await _repository.Update((TEntity)dto);
             else
                 throw new ArgumentException("Entidade não encontrada.");

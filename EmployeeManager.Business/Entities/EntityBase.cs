@@ -1,13 +1,14 @@
-﻿using EmployeeManager.Business.Dto;
-using System.ComponentModel.DataAnnotations;
+﻿using Dapper.Contrib.Extensions;
+using EmployeeManager.Business.Dto;
 
 namespace EmployeeManager.Business.Entities
 {
     public abstract class EntityBase
     {
         [Key]
-        public int Id { get; set; }
-        public DateTime Created_At { get; set; }
+        public long id { get; set; }
+        [Write(false)]
+        public DateTime created_at { get; set; }
 
 
         public static implicit operator DtoBase(EntityBase entity) => entity.ToDto();

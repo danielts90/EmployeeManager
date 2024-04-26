@@ -1,23 +1,30 @@
 ﻿using EmployeeManager.Business.Entities;
+using EmployeeManager.Business.Validators;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManager.Business.Dto
 {
     public class JobOportunityDto : DtoBase
     {
+        public string? Name { get; set; }
+        public string? FunctionDescription { get; set; }
+        public string? CompanyName { get; set; }
+        public decimal? Salary { get; set; }
         public override ValidationResult Validate()
         {
-            throw new NotImplementedException();
+            var validator = new JobOportunityValidator();
+            return validator.Validate(this);
         }
 
-        protected override EntityBase ToEntity()
+        protected override JobOportunity ToEntity()
         {
-            throw new NotImplementedException();
+            return new JobOportunity
+            {
+                name = Name,
+                company = CompanyName,
+                function_description = FunctionDescription,
+                salary = Salary
+            };
         }
     }
 }

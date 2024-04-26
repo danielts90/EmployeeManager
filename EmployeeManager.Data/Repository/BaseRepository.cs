@@ -19,6 +19,7 @@ namespace EmployeeManager.Data.Repository
 
         public async Task<long> Insert(T entity)
         {
+            entity.created_at = DateTime.Now;
             return await _db.InsertAsync(entity);
         }
 
