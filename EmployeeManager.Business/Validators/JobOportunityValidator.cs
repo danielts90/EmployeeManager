@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace EmployeeManager.Business.Validators
 {
-    public class JobOportunityValidator : AbstractValidator<JobOportunityDto>
+    public class JobOpportunityValidator : AbstractValidator<JobOpportunityDto>
     {
-        public JobOportunityValidator()
+        public JobOpportunityValidator()
         {
             RuleFor(x => x.Name)
                 .NotEmpty()

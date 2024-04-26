@@ -6,7 +6,7 @@ namespace EmployeeManager.Business.Entities
     public abstract class EntityBase
     {
         [Key]
-        public long id { get; set; }
+        public long Id { get; set; }
         [Write(false)]
         public DateTime created_at { get; set; }
 

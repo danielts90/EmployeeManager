@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace EmployeeManager.Data.Repository
 {
-    public class JobOportunityRepository : BaseRepository<JobOportunity>, IJobOportunityRepository
+    public class JobOpportunityRepository : BaseRepository<JobOpportunity>, IJobOpportunityRepository
     {
-        public JobOportunityRepository(IConfiguration configuration) : base(configuration)
+        public JobOpportunityRepository(IConfiguration configuration) : base(configuration)
         {
         }
     }

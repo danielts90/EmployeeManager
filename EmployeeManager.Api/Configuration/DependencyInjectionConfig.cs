@@ -8,12 +8,12 @@ namespace EmployeeManager.Api.Configuration
     {
         public static void ConfigureDependencyInjection(this IServiceCollection services)
         {
-            services.AddScoped<IJobOportunityService, JobOportunityService>();
+            services.AddScoped<IJobOpportunityService, JobOpportunityService>();
             services.AddScoped<IAddressService, AddressService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
-            services.AddScoped<IJobOportunityRepository, JobOportunityRepository>();
+            services.AddScoped<IJobOpportunityRepository, JobOpportunityRepository>();
         }
     }
 }

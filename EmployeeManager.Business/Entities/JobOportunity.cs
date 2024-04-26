@@ -3,18 +3,18 @@ using Dapper.Contrib.Extensions;
 
 namespace EmployeeManager.Business.Entities
 {
-    [Table("job_oportunity")]
-    public class JobOportunity : EntityBase
+    [Table("job_opportunity")]
+    public class JobOpportunity : EntityBase
     {
         public string? name { get; set; }
         public string? function_description { get; set; }
         public string? company { get; set; }
         public decimal? salary { get; set; }
-        protected override JobOportunityDto ToDto()
+        protected override JobOpportunityDto ToDto()
         {
-            return new JobOportunityDto
+            return new JobOpportunityDto
             {
-                Id = id,
+                Id = Id,
                 Name = name,
                 FunctionDescription = function_description,
                 Salary = salary,

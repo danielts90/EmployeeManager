@@ -2,7 +2,7 @@
 
 namespace EmployeeManager.Business.Interfaces
 {
-    public interface IJobOportunityRepository : IBaseRepository<JobOportunity>
+    public interface IJobOpportunityRepository : IBaseRepository<JobOpportunity>
     {
     }
 }

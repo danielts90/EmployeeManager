@@ -17,12 +17,13 @@ namespace EmployeeManager.Business.Entities
         {
             return new EmployeeDto
             {
-                Id = id,
+                Id = Id,
                 Name = name,
                 MotherName = mother_name,
                 FatherName = father_name,
                 Addres_Id = address_id,
-                BirthDate = birthdate
+                BirthDate = birthdate,
+                Cpf = cpf
             };
         }
     }

@@ -3,5 +3,8 @@ using EmployeeManager.Business.Entities;
 
 namespace EmployeeManager.Business.Interfaces
 {
-    public interface IJobOportunityService : IBaseService<JobOportunityDto, JobOportunity> { }
+    public interface IJobOpportunityService : IBaseService<JobOpportunityDto, JobOpportunity> 
+    {
+        Task CreateFake(int quantity);
+    }
 }

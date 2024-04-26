@@ -4,7 +4,7 @@ using FluentValidation.Results;
 
 namespace EmployeeManager.Business.Dto
 {
-    public class JobOportunityDto : DtoBase
+    public class JobOpportunityDto : DtoBase
     {
         public string? Name { get; set; }
         public string? FunctionDescription { get; set; }
@@ -12,13 +12,13 @@ namespace EmployeeManager.Business.Dto
         public decimal? Salary { get; set; }
         public override ValidationResult Validate()
         {
-            var validator = new JobOportunityValidator();
+            var validator = new JobOpportunityValidator();
             return validator.Validate(this);
         }
 
-        protected override JobOportunity ToEntity()
+        protected override JobOpportunity ToEntity()
         {
-            return new JobOportunity
+            return new JobOpportunity
             {
                 name = Name,
                 company = CompanyName,
